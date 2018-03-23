@@ -1,4 +1,6 @@
-﻿namespace Delegates
+﻿using System;
+
+namespace Delegates
 {
     public class CurrencyConverter
     {
@@ -17,5 +19,18 @@
 
             return result;
         }
+
+        public string Pay(int amount)
+        {
+            var result = $"Zapłacono: {amount} zł.";
+
+            return string.Format(result);
+        }
+
+        public void DisplayValueInCurrencyFormat(int amount)
+        {
+            var amountToCurrencyFormat = amount.ToString("C2");
+            Console.WriteLine($"Pozostało ci {amountToCurrencyFormat} na koncie");
+        } 
     }
 }

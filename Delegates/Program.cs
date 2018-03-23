@@ -15,6 +15,16 @@ namespace Delegates
             Console.WriteLine($"Obecny kurs dolara to: {dolarExchangeRate}");
             Console.WriteLine($"100 zł to: {currencyConverter.ZlotyToDolar(100)} USD");
             Console.ReadKey();
+
+            Func<int, string> currencyFunc = currencyConverter.Pay;
+            var paid = currencyFunc(200);
+
+            Console.WriteLine(paid);
+            Console.ReadKey();
+
+            Action<int> currencyAction = currencyConverter.DisplayValueInCurrencyFormat;
+            currencyAction(89);
+            Console.ReadKey();
         }
     }
 }
